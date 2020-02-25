@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_150720) do
+ActiveRecord::Schema.define(version: 2020_02_25_110751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "animals", force: :cascade do |t|
+    t.string "name"
+    t.string "animal_type"
+    t.string "race"
+    t.string "description"
+    t.integer "age"
+    t.string "size"
+    t.bigint "shelter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_animals_on_shelter_id"
+  end
 
   create_table "shelters", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,4 +52,5 @@ ActiveRecord::Schema.define(version: 2020_02_24_150720) do
     t.index ["reset_password_token"], name: "index_volunteers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "animals", "shelters"
 end
