@@ -1,6 +1,13 @@
+.navbar-global {
+  // position: fixed;
+  color: white;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  opacity: 0.8;
+  background-color: white;
+  padding: 0px 20px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +16,19 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-link {
+  margin: 0px 0px 0px 0px;
+  font-size: 13px;
+}
+
+.navbar-brand {
+  padding: 4px;
+  margin: 0px;
+}
+
+.fa-dog {
+  font-size: 25px;
+  color: rgb(63, 40, 14);
 }
