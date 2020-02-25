@@ -1,0 +1,27 @@
+.animal-background {
+  background-image: url("https://dailygazette.com/sites/default/files/styles/gallery_image/public/2019-05/051719_SARDogWalkers_EM-03.jpg?itok=LXr2fUcN");
+  background-size: cover;
+}
+.animal-form {
+  max-width: 500px;
+  margin: auto;
+  padding: 50px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+.form-control {
+  opacity: 0.8;
+}
+.form-item {
+  margin: 5px;
+}
+.two-form-item {
+  display: flex;
+}
+.form-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+.form-button {
+  color: white;
+}
