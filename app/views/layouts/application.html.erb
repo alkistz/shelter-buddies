@@ -8,11 +8,78 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div class="navbar-global">
+    <div class="navbar-lewagon navbar navbar-expand-sm navbar-light">
+      <p class="navbar-brand"><i class="fas fa-dog"></i></p>
+        <%# link_to "<i class='fas fa-cocktail'></i>".html_safe, animals_path, class: 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <p class="nav-link">Home</p>
+            <%# link_to 'New Cocktail', new_animal_path(), class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link">Shelters</p>
+            <%# link_to 'All Cocktails', animals_path(), class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link">My Bookings</p>
+            <%# link_to 'All Cocktails', animals_path(), class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link">Help</p>
+            <%# link_to 'All Cocktails', animals_path(), class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <img src="https://lh3.googleusercontent.com/proxy/P0nyHjA3CDdBmmq5jD_qIQy18R7oWll0Q5roNUEh-ThXKnceO2MW_DDMadjFyBb-tl0enSvYhu8J0JHYohBp1ufkIsIqqGZodTlYLcEByX4De1gBzuM" class="avatar">
+            <%# link_to 'All Cocktails', animals_path(), class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
     <%= yield %>
+    <div class="upper-footer">
+      <div  class="footer-card">
+        <li class="footer-titles"><h6>Community</h6></li>
+        <li class="footer-infos"><a href="#">Make a donation</a></li>
+        <li class="footer-infos"><a href="#">Join the volunteer team</a></li>
+        <li class="footer-infos"><a href="#">Something else</a></li>
+      </div>
+      <div class="footer-card">
+        <li class="footer-titles"><h6>Support</h6></li>
+        <li class="footer-infos"><a href="">+32 479 07 77 07</a></li>
+        <li class="footer-infos"><a href="">shelterbuddies@gmail.com</a></li>
+      </div>
+      <div class="footer-card">
+        <li class="footer-titles"><h6>About</h6></li>
+        <li class="footer-infos"><a href="#">The shelterbuddies team</a></li>
+        <li class="footer-infos"><a href="#">Adopt a pet</a></li>
+        <li class="footer-infos"><a href="#">Trust & Safety</a></li>
+
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="footer-copyright">
+        <i class="far fa-copyright"></i> 2020 ShelterBuddies, Inc. All rights reserved
+      </div>
+    </div>
+
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>

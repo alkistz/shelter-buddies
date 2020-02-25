@@ -1,0 +1,30 @@
+.banner {
+  height: 800px;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.container {
+ display: flex;
+ height: 600px;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+ align-items: left;
+}
+
+.banner-content {
+  color: white;
+  padding-left: 10px;
+  margin-top: 250px;
+}
+
+.banner-content h1 {
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.banner-content p {
+  font-size: 22px;
+}
+
