@@ -1,2 +1,57 @@
-<h1>Animals#show</h1>
-<p>Find me in app/views/animals/show.html.erb</p>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col 12 col-md-5">
+      <div id="intro-box">
+        <div>
+          <h1><b>Meet <%= @animal.name %>!</b></h1>
+        </div>
+        <div>
+          <img src="https://source.unsplash.com/7mJ3vIN1_-U/100x100/" alt="a great white shark">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-start">
+     <div class="col 12 col-md-5">
+      <div id="info-box">
+        <h2><b>Key info</b></h2>
+          <table style="width:100%">
+              <tr>
+                <tr>
+                <th>Name</th>
+                <td><%= @animal.name %></td>
+              </tr>
+              <tr>
+                <th>Animal type</th>
+                <td><%= @animal.animal_type %></td>
+              </tr>
+              <tr>
+                <th>Breed</th>
+                <td><%= @animal.race %></td>
+              </tr>
+              <tr>
+                <th>Age</th>
+                <td><%= @animal.age %></td>
+              </tr>
+              <tr>
+                <th>Size</th>
+                <td><%= @animal.size %></td>
+              </tr>
+          </table>
+      </div>
+    </div>
+    <div class="col 12 col-md-7">
+      <div>
+        <h2><b>More details about <%= @animal.name %></b></h2>
+        <p> <%= @animal.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="call-to-action-frame">
+    <div class="call-to-action">
+      <h2>Has <%= @animal.name %> sparked your interest?</h2>
+      <button type="button" class="btn btn-outline-light">Book a session!</button>
+    </div>
+  </div>
+</div>
+
