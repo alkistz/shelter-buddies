@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookings
   resources :animals
   devise_for :shelters
   devise_for :volunteers

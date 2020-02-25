@@ -1,0 +1,12 @@
+<h1>Bookings#show</h1>
+
+
+<% animal = Animal.find(@booking.animal_id) %>
+<% volunteer = Volunteer.find(@booking.volunteer_id) %>
+
+<p>Booking status: <%= @booking.status %></p>
+<p>Pet: <%= animal.name %></p>
+<p>Volunteer: <%= volunteer.first_name %>, <%= volunteer.last_name %></p>
+
+<p><%= link_to 'Back to homepage', root_path %></p>
+<p><%= link_to 'List of animals', animals_path %></p>

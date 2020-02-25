@@ -13,8 +13,8 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    animal = Animal.new(animal_params)
-    animal.save
+    @animal = Animal.new(animal_params)
+    @animal.save
     redirect_to animal_path(animal)
   end
 
@@ -22,7 +22,7 @@ class AnimalsController < ApplicationController
   end
 
   def update
-    animal = Animal.update(animal_params)
+    @animal = Animal.update(animal_params)
   end
 
   def destroy
