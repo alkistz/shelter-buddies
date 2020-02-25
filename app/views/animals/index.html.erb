@@ -1,0 +1,8 @@
+<h1>Animals#index</h1>
+<p>Find me in app/views/animals/index.html.erb</p>
+
+<ul>
+  <% @animals.each do |animal| %>
+    <li>Name: <%= animal.name %> Animal type: <%= animal.animal_type %></li>
+  <% end %>
+</ul>
