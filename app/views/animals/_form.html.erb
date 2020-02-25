@@ -1,17 +1,35 @@
-
 <%= form_for(@animal) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :animal_type %>
-  <%= f.text_field :animal_type %>
-  <%= f.label :race %>
-  <%= f.text_field :race %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-  <%= f.label :size %>
-  <%= f.text_field :size %>
-
-  <%= f.submit %>
+<div class="animal-background">
+  <div class="animal-form">
+    <div class="form-item">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-item">
+    <%= f.label :animal_type %>
+    <%= f.text_field :animal_type, class: 'form-control' %>
+    </div>
+    <div class="two-form-item">
+    <div class="form-item">
+    <%= f.label :race %>
+    <%= f.text_field :race, class: 'form-control' %>
+    </div>
+    <div class="form-item">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+    </div>
+    </div>
+    <div class="form-item">
+    <%= f.label :age %>
+    <%= f.number_field :age, class: 'form-control' %>
+    </div class="form-item">
+    <div>
+    <%= f.label :size %>
+    <%= f.text_field :size, class: 'form-control' %>
+    </div>
+    <div class="form-item form-btn">
+    <%= f.submit 'Add a Pet', class: 'form-button btn btn-success'%>
+    </div>
+  </div>
+</div>
 <% end %>
