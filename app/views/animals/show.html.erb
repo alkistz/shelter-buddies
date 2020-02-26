@@ -6,7 +6,8 @@
           <h1><b>Meet <%= @animal.name %>!</b></h1>
         </div>
         <div>
-          <img src="https://source.unsplash.com/7mJ3vIN1_-U/100x100/" alt="a great white shark">
+          <!-- <img src="https://source.unsplash.com/7mJ3vIN1_-U/100x100/" alt="a great white shark"> -->
+          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
         </div>
       </div>
     </div>

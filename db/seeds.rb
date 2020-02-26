@@ -9,7 +9,10 @@
 shelters = Shelter.create([
   {
     email: 'someemail@gmail.com',
-    password: '123456xaxaxaxa!'
+    password: '123456xaxaxaxa!',
+    name: 'Pet paradise',
+    description: 'Heaven for all homeless creatures',
+    address: 'Dogstreet 111, London'
  }
 ])
 
