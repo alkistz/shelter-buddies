@@ -1,9 +1,25 @@
 <div class="container">
-  <h1>Here are the available animals</h1>
+  <div class="col-sm-6 col-xs-12">
+    <h1><b>Find an animal near you</b></h1>
+      <form id="search-box">
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Animal type">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Location">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-outline-primary">Find your buddy!</button>
+          </div>
+        </div>
+      </form>
+      <br>
+    </div>
   <div class="main-container">
     <div class="cards">
       <% @animals.each do |animal| %>
-        <div class="card-trip">
+        <div class="card-animal">
           <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
           <div class="card-trip-infos">
             <div>
