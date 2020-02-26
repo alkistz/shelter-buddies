@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   get 'shelters/show'
   get 'volunteers/index'
   get 'volunteers/show'
-  resources :bookings
-  resources :animals
+  resources :bookings, except: [:new, :create]
+  resources :animals do
+    resources :bookings, only: [:new, :create]
+  end
   devise_for :shelters
   devise_for :volunteers
   root to: 'pages#home'
