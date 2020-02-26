@@ -1,7 +1,8 @@
-<%= form_for(@animal) do |f| %>
+<%= simple_form_for(@animal) do |f| %>
 <div class="animal-background">
   <div class="animal-form">
     <div class="form-item">
+    <%= f.hidden_field :shelter_id, :value => current_shelter.id %>
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
     </div>
@@ -22,10 +23,14 @@
     <div class="form-item">
     <%= f.label :age %>
     <%= f.number_field :age, class: 'form-control' %>
-    </div class="form-item">
-    <div>
+    </div>
+    <div class="form-item">
     <%= f.label :size %>
     <%= f.text_field :size, class: 'form-control' %>
+    </div>
+    <div class="form-item">
+    <%= f.label :photo %>
+    <%= f.input :photo, as: :file, class: 'form-control' %>
     </div>
     <div class="form-item form-btn">
     <%= f.submit 'Add a Pet', class: 'form-button btn btn-success'%>

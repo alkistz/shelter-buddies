@@ -1,2 +1,18 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Make a new Booking!</h1>
+
+<%= form_for @booking do |f| %>
+<div class="animal-background">
+  <div class="animal-form">
+    <div class="form-item">
+    <%= f.hidden_field :status, :value => "Pending" %>
+    <%= f.hidden_field :animal_id, :value => 1 %>
+    <%= f.hidden_field :volunteer_id, :value => current_volunteer.id %>
+    <%= f.label :time_slot %>
+    <%= f.date_field :time_slot, class: 'form-control' %>
+    </div>
+    <div class="form-item form-btn">
+    <%= f.submit 'Book the date', class: 'form-button btn btn-success'%>
+    </div>
+  </div>
+</div>
+<% end %>
