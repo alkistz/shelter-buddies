@@ -50,7 +50,17 @@
   <div class="call-to-action-frame">
     <div class="call-to-action">
       <h2>Has <%= @animal.name %> sparked your interest?</h2>
-      <button type="button" class="btn btn-outline-light">Book a session!</button>
+
+      <%= simple_form_for [@animal, @booking] do |f| %>
+        <div class="form-item">
+          <%= f.hidden_field :status, :value => "Pending" %>
+          <%= f.hidden_field :volunteer_id, :value => current_volunteer.id %>
+          <%= f.label :time_slot %>
+          <%= f.date_field :time_slot, class: 'form-control' %>
+       </div>
+        <%= f.submit "Book now", class: "btn btn-primary" %>
+      <% end %>
+
     </div>
   </div>
 </div>

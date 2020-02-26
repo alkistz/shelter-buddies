@@ -14,8 +14,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @animal = Animal.find(params[:animal_id])
+    @booking.animal = @animal
     @booking.save
-    redirect_to booking_path(@booking)
+    redirect_to @booking
   end
 
   def edit
@@ -34,7 +36,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :time_slot, :animal_id, :volunteer_id)
+    params.require(:booking).permit(:status, :time_slot, :volunteer_id)
 
   end
 
