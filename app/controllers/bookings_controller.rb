@@ -8,6 +8,8 @@ class BookingsController < ApplicationController
   def show
   end
 
+  # this is a test
+
   def new
     @booking = Booking.new
   end
