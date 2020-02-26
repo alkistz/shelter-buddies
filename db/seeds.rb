@@ -6,7 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-shelters = Shelter.create([{email: 'someemail@gmail.com', password: '123456xaxaxaxa!'}])
+shelters = Shelter.create([
+  {
+    email: 'someemail@gmail.com',
+    password: '123456xaxaxaxa!'
+ }
+])
+
+
+volunteers = Volunteer.create([
+  {
+    email: 'volunteer@gmail.com',
+    password: 'volunteer123!A',
+    first_name: 'Private Ryan',
+    last_name: 'USA',
+    description: 'Interered in taking Sharks for a walk in Brussels when it rains heavily.'
+  },
+
+  {
+    email: 'johnRambo@gmail.com',
+    password: 'volunteer1234!A',
+    first_name: 'John',
+    last_name: 'Rambo',
+    description: 'Average ex army veteran looking for some affection from animals.'
+  }
+])
+
+
 animals = Animal.create!([
   {
     name: "Bloody hell",
@@ -47,4 +73,21 @@ animals = Animal.create!([
     size: "Small",
     shelter: shelters.first
   }
+])
+
+bookings = Booking.create([
+  {
+    status: 'Upcoming',
+    time_slot: 'Tomorrow',
+    volunteer: volunteers.first,
+    animal: animals.first
+  },
+
+  {
+    status: 'Completed',
+    time_slot: 'Yesterday',
+    volunteer: volunteers[1],
+    animal: animals[1]
+  }
+
 ])
