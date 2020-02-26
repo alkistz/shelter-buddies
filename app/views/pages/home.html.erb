@@ -6,10 +6,12 @@
       <h2>Book time with your favorite shelter animal</h2>
     </div>
     <div class="col-sm-6 col-xs-12">
-      <form id="search-box">
         <div class="row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Select your preferred animal">
+            <%= simple_form_for :search, url: animals_path, method: "GET", html: { class: 'form-control' } do |f| %>
+              <%= f.input :query, input_html: {value: ""} %>
+              <%= f.submit "Search", class: "btn btn-primary" %>
+            <% end %>
           </div>
           <div class="col">
             <input type="text" class="form-control" placeholder="Select your location">
@@ -23,8 +25,6 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-outline-light">Find your buddy!</button>
-      </form>
     </div>
   </div>
 </div>
