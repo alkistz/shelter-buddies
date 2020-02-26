@@ -18,4 +18,13 @@ class ApplicationController < ActionController::Base
       super # Use the default one
     end
   end
+
+  def after_sign_in_path_for(resource)
+    if resource_class == Shelter
+      stored_location_for(resource) || shelters_show_path(resource)
+    else
+      super # Use the default one
+    end
+  end
+
 end
