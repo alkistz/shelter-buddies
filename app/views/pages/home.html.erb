@@ -6,11 +6,11 @@
       <h2>Book time with your favorite shelter animal</h2>
     </div>
     <div class="col-sm-6 col-xs-12">
-      <form id="search-box">
         <div class="row">
           <div class="col">
-            <input list="browsers" name="myBrowser" class="form-control" placeholder="Select an animal"/>
-            <datalist id="browsers">
+            <%= simple_form_for :search, url: animals_path, method: "GET" do |f| %>
+              <%= f.text_field :query, class: 'form-control', placeholder: 'Select animal', list: 'browsers' %>
+              <datalist id="browsers">
               <option value="Cat">
               <option value="Dog">
               <option value="Rabbit">
@@ -29,10 +29,10 @@
             <div class="form-group">
               <input id='datetimepicker1'type="text" class="form-control" placeholder="Select your date"/>
             </div>
+              <%= f.submit "Search", class: "btn btn-primary" %>
+            <% end %>
           </div>
         </div>
-        <button type="submit" class="btn btn-outline-light">Find your buddy!</button>
-      </form>
     </div>
   </div>
 </div>
