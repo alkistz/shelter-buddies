@@ -9,7 +9,18 @@
 shelters = Shelter.create([
   {
     email: 'someemail@gmail.com',
-    password: '123456xaxaxaxa!'
+    password: '123456xaxaxaxa!',
+    address: 'Rue Bollinckx 203, Anderlecht'
+ },
+ {
+    email: 'someemail1@gmail.com',
+    password: '123457xaxaxaxa!',
+    address: 'Rue du Boulet 7, Brussels'
+ },
+ {
+    email: 'someemail3@gmail.com',
+    password: '123458xaxaxaxa!',
+    address: 'Boulevard du Regent 47, Brussels'
  }
 ])
 
