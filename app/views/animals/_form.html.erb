@@ -2,6 +2,7 @@
 <div class="animal-background">
   <div class="animal-form">
     <div class="form-item">
+    <%= f.hidden_field :shelter_id, :value => current_shelter.id %>
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
     </div>
