@@ -1,0 +1,12 @@
+<h1>Shelters</h1>
+
+<div class="cards d-flex flex-wrap">
+  <% @shelters.each do |shelter| %>
+    <div class="card col-4 m-10">
+      <h2><%= shelter.name %></h2>
+      <p>We are based at <%= shelter.address %></p>
+      <p><%= shelter.description %></p>
+      <p><%= link_to "More info", shelters_show_path(shelter) %></p>
+    </div>
+  <% end %>
+</div>

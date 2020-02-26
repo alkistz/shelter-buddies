@@ -1,0 +1,13 @@
+<h1><%= @shelter.name %></h1>
+<p>We are based at <%= @shelter.address %></p>
+<p><%= @shelter.description %></p>
+<p>Meet our animals:</p>
+<div class="cards d-flex flex-wrap">
+  <% @shelter.animals.each do |animal| %>
+    <div class="card col-4 m-10">
+      <h2><%= animal.name %></h2>
+      <p><%= animal.race %></p>
+      <p><%= link_to "More info", animal_path(animal) %></p>
+    </div>
+  <% end %>
+</div>

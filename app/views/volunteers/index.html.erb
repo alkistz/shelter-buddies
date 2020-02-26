@@ -1,0 +1,12 @@
+<h1>Volunteers</h1>
+
+<div class="cards d-flex flex-wrap">
+  <% @volunteers.each do |volunteer| %>
+    <div class="card col-4 m-10">
+      <h2><%= volunteer.first_name %></h2>
+      <p>Hi, I am <%= volunteer.first_name %> <%= volunteer.last_name %></p>
+      <p><%= volunteer.description %></p>
+      <p><%= link_to "Read more", volunteers_show_path(volunteer) %></p>
+    </div>
+  <% end %>
+</div>

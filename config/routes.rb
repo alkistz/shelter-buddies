@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'shelters/index'
+  get 'shelters/show'
+  get 'volunteers/index'
+  get 'volunteers/show'
   resources :bookings
   resources :animals
   devise_for :shelters
