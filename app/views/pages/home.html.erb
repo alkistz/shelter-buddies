@@ -9,7 +9,15 @@
       <form id="search-box">
         <div class="row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Select your preferred animal">
+            <input list="browsers" name="myBrowser" class="form-control" placeholder="Select an animal"/>
+            <datalist id="browsers">
+              <option value="Cat">
+              <option value="Dog">
+              <option value="Rabbit">
+              <option value="Hamster">
+              <option value="Horse">
+              <option value="Bird">
+            </datalist>
           </div>
           <div class="col">
             <input type="text" class="form-control" placeholder="Select your location">
