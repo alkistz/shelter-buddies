@@ -1,8 +1,21 @@
-<h1>Animals#index</h1>
-<p>Find me in app/views/animals/index.html.erb</p>
-
-<ul>
-  <% @animals.each do |animal| %>
-    <li>Name: <%= animal.name %> Animal type: <%= animal.animal_type %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Here are the available animals</h1>
+  <div class="main-container">
+    <div class="cards">
+      <% @animals.each do |animal| %>
+        <div class="card-trip">
+          <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to animal.name ,animal_path(animal) %></h2>
+              <p><%= animal.name %> is a <%= animal.animal_type %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="map">
+    <p>This is where the map will go</p>
+    </div>
+  </div>
+</div>
