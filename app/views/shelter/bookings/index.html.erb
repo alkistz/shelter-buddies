@@ -1,8 +1,9 @@
 <h1>My Bookings</h1>
 
 
+
 <% @bookings.each do |booking| %>
   <% animal = Animal.find(booking.animal_id) %>
-  <h2>Booking with: <%= animal.name %></h2>
-  <p>Booked on: <%= booking.time_slot %></p>
+  <h2><%= animal.name %></h2>
+  <p>Booked for: <%= booking.time_slot %></p>
 <% end %>

@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :volunteer do
-    get 'bookings/index'
-  end
   get 'shelters/index'
   get 'shelters/show'
   get 'volunteers/index'
@@ -16,6 +13,11 @@ Rails.application.routes.draw do
   namespace :volunteer do
     resources :bookings, only: [:index]
   end
+
+  namespace :shelter do
+    get 'bookings/index', to: 'bookings#index', as: :my_bookings
+  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
