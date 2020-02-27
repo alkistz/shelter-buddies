@@ -11,11 +11,22 @@ Volunteer.destroy_all
 
 shelters = Shelter.create([
   {
+    name: 'The friendly shelter',
     email: 'someemail@gmail.com',
     password: '123456xaxaxaxa!',
-    name: 'Pet paradise',
-    description: 'Heaven for all homeless creatures',
-    address: 'Dogstreet 111, London'
+    address: 'Rue Bollinckx 203, Anderlecht'
+ },
+ {
+    name: 'The happy shelter',
+    email: 'someemail1@gmail.com',
+    password: '123457xaxaxaxa!',
+    address: 'Rue du Boulet 7, Brussels'
+ },
+ {
+    name: 'The playful shelter',
+    email: 'someemail3@gmail.com',
+    password: '123458xaxaxaxa!',
+    address: 'Boulevard du Regent 47, Brussels'
  }
 ])
 
@@ -28,7 +39,6 @@ volunteers = Volunteer.create([
     last_name: 'USA',
     description: 'Interered in taking Sharks for a walk in Brussels when it rains heavily.'
   },
-
   {
     email: 'johnRambo@gmail.com',
     password: 'somethinf!A',
