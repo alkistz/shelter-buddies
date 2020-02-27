@@ -27,10 +27,6 @@ shelters = Shelter.create([
     email: 'someemail3@gmail.com',
     password: '123458xaxaxaxa!',
     address: 'Boulevard du Regent 47, Brussels'
-
-    name: 'Pet paradise',
-    description: 'Heaven for all homeless creatures',
-    address: 'Dogstreet 111, London'
  }
 ])
 
@@ -43,10 +39,9 @@ volunteers = Volunteer.create([
     last_name: 'USA',
     description: 'Interered in taking Sharks for a walk in Brussels when it rains heavily.'
   },
-
   {
     email: 'johnRambo@gmail.com',
-    password: 'volunteer1234!A',
+    password: 'voluntare1234!A',
     first_name: 'John',
     last_name: 'Rambo',
     description: 'Average ex army veteran looking for some affection from animals.'
