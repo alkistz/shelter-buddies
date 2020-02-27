@@ -1,7 +1,7 @@
-.map {
-  width: 600px;
-  border-style: solid;
-  border-color: black;
+#map {
+  width: auto;
+  position: sticky;
+  top: 10px;
 }
 
 .mapboxgl-popup {
