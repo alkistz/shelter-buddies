@@ -6,10 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Shelter.destroy_all
+Volunteer.destroy_all
+
 shelters = Shelter.create([
   {
+    name: 'The friendly shelter',
     email: 'someemail@gmail.com',
     password: '123456xaxaxaxa!',
+    address: 'Rue Bollinckx 203, Anderlecht'
+ },
+ {
+    name: 'The happy shelter',
+    email: 'someemail1@gmail.com',
+    password: '123457xaxaxaxa!',
+    address: 'Rue du Boulet 7, Brussels'
+ },
+ {
+    name: 'The playful shelter',
+    email: 'someemail3@gmail.com',
+    password: '123458xaxaxaxa!',
+    address: 'Boulevard du Regent 47, Brussels'
+
     name: 'Pet paradise',
     description: 'Heaven for all homeless creatures',
     address: 'Dogstreet 111, London'
