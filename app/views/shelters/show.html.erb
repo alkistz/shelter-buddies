@@ -1,7 +1,10 @@
-<h1><%= @shelter.name %></h1>
-<p>We are based at <%= @shelter.address %></p>
+<div class="container">
+  <div id="info-box">
+<h1><b><%= @shelter.name %></b></h1>
+<p>We are based at <%= @shelter.address %>.</p>
 <p><%= @shelter.description %></p>
-<p>Meet our animals:</p>
+</div>
+<h2><b>Meet our animals:</b></h2>
 <div class="cards d-flex flex-wrap">
   <% @shelter.animals.each do |animal| %>
     <div class="card col-4 m-10">
@@ -12,3 +15,4 @@
   <% end %>
 </div>
 <p><%= link_to "Register a new animal", new_animal_path %></p>
+</div>
