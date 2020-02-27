@@ -26,11 +26,14 @@
         <div class="cards">
           <% shelter.animals.each do |animal| %>
             <div class="card-animal">
+              <% unless animal.photo.attached? %>
               <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
+              <% else %>
+              <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <h2><%= link_to animal.name ,animal_path(animal) %></h2>
-                  <p><%= animal.name %> is a <%= animal.animal_type %></p>
                 </div>
               </div>
             </div>
@@ -41,7 +44,8 @@
     </div>
     <div
       id="map"
-      style="width: 100%"
+      style="width: 100%;
+      height: 600px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
