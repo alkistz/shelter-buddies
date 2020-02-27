@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Sign up</h2>
+  <h2>Sign up hello</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
@@ -38,6 +38,9 @@
       <%= f.input :description,
                    autofocus: true,
                    input_html: { autocomplete: "description" }%>
+      <%= f.input :photo,
+                  as: :file,
+                  input_html: { autocomplete: "photo" } %>
     </div>
 
     <div class="form-actions">
