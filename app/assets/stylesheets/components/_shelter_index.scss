@@ -1,0 +1,15 @@
+.shelter-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  flex-grow: 1;
+}
+
+.shelter-container {
+  display: flex;
+  flex-orientation: row;
+}
+
+#shelter-map {
+  max-width: 400px;
+}

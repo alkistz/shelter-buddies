@@ -7,6 +7,15 @@ class AnimalsController < ApplicationController
   def index
     if params[:search] == nil
       @animals = Animal.all
+
+       @markers = @animals.map do |animal|
+      {
+        lat: animal.shelter.latitude,
+        lng: animal.shelter.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { animal: animal }),
+        image_url: helpers.asset_url('shelter-icon')
+      }
+        end
     else
       @animals = Animal.where(animal_type: params[:search][:query])
     end

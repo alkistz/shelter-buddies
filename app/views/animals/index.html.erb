@@ -15,7 +15,7 @@
         </div>
       </form>
       <br>
-    </div>
+  </div>
   <div class="main-container">
     <div class="cards">
       <% @animals.each do |animal| %>
@@ -34,8 +34,13 @@
         </div>
       <% end %>
     </div>
-    <div class="map">
-    <p>This is where the map will go</p>
+    <div>
+      <div
+        id="map"
+        style="width: 50%"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 </div>
