@@ -8,16 +8,19 @@
 
 shelters = Shelter.create([
   {
+    name: 'The friendly shelter',
     email: 'someemail@gmail.com',
     password: '123456xaxaxaxa!',
     address: 'Rue Bollinckx 203, Anderlecht'
  },
  {
+    name: 'The happy shelter',
     email: 'someemail1@gmail.com',
     password: '123457xaxaxaxa!',
     address: 'Rue du Boulet 7, Brussels'
  },
  {
+    name: 'The playful shelter',
     email: 'someemail3@gmail.com',
     password: '123458xaxaxaxa!',
     address: 'Boulevard du Regent 47, Brussels'
