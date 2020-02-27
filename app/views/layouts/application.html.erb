@@ -13,38 +13,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="navbar-global">
-    <div class="navbar-lewagon navbar navbar-expand-sm navbar-light">
-      <p class="navbar-brand"><i class="fas fa-dog"></i></p>
-        <%# link_to "<i class='fas fa-cocktail'></i>".html_safe, animals_path, class: 'navbar-brand' %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%= link_to 'Home', root_path(), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Animals', animals_path(), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <p class="nav-link">My Bookings</p>
-            <%# link_to 'All Cocktails', animals_path(), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <p class="nav-link">Help</p>
-            <%# link_to 'All Cocktails', animals_path(), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <img src="https://lh3.googleusercontent.com/proxy/P0nyHjA3CDdBmmq5jD_qIQy18R7oWll0Q5roNUEh-ThXKnceO2MW_DDMadjFyBb-tl0enSvYhu8J0JHYohBp1ufkIsIqqGZodTlYLcEByX4De1gBzuM" class="avatar">
-            <%# link_to 'All Cocktails', animals_path(), class: 'nav-link' %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <%= render 'shared/navbar' %>
     <%= yield %>
     <div class="upper-footer">
       <div  class="footer-card">

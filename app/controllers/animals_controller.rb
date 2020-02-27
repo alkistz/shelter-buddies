@@ -1,11 +1,19 @@
 class AnimalsController < ApplicationController
   before_action :animal_find, only: [:show, :delete, :update, :edit]
 
+  def search
+  end
+
   def index
-    @animals = Animal.all
+    if params[:search] == nil
+      @animals = Animal.all
+    else
+      @animals = Animal.where(animal_type: params[:search][:query])
+    end
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new

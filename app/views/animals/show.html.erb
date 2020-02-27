@@ -6,7 +6,8 @@
           <h1><b>Meet <%= @animal.name %>!</b></h1>
         </div>
         <div>
-          <img src="https://source.unsplash.com/7mJ3vIN1_-U/100x100/" alt="a great white shark">
+          <!-- <img src="https://source.unsplash.com/7mJ3vIN1_-U/100x100/" alt="a great white shark"> -->
+          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
         </div>
       </div>
     </div>
@@ -47,10 +48,29 @@
       </div>
     </div>
   </div>
+  <% if volunteer_signed_in? %>
   <div class="call-to-action-frame">
     <div class="call-to-action">
       <h2>Has <%= @animal.name %> sparked your interest?</h2>
-      <button type="button" class="btn btn-outline-light">Book a session!</button>
+      <%= simple_form_for [@animal, @booking] do |f| %>
+        <div class="form-item">
+          <%= f.hidden_field :status, :value => "Pending" %>
+          <%= f.hidden_field :volunteer_id, :value => current_volunteer.id %>
+          <%= f.label :time_slot %>
+          <%= f.date_field :time_slot, class: 'form-control' %>
+       </div>
+        <%= f.submit "Book now", class: "btn btn-primary" %>
+      <% end %>
+  <% elsif shelter_signed_in? %>
+  <% else %>
+  <div class="call-to-action-frame">
+    <div class="call-to-action">
+      <h2>Has <%= @animal.name %> sparked your interest?</h2>
+        <div class="form-item">
+          <%= link_to 'Sign-up', new_volunteer_registration_path, class: "btn btn-primary" %>
+          <%= link_to 'Login', new_volunteer_session_path, class: "btn btn-primary" %>
+       </div>
+  <% end %>
     </div>
   </div>
 </div>
