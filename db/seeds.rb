@@ -31,7 +31,7 @@ volunteers = Volunteer.create([
 
   {
     email: 'johnRambo@gmail.com',
-    password: 'volunteer1234!A',
+    password: 'somethinf!A',
     first_name: 'John',
     last_name: 'Rambo',
     description: 'Average ex army veteran looking for some affection from animals.'
