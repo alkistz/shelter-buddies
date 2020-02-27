@@ -8,6 +8,8 @@
 <p>Booking status: <%= @booking.status %></p>
 <p>Pet: <%= link_to animal.name , animal_path(animal) %></p>
 <p>Volunteer: <%= volunteer.first_name %>, <%= volunteer.last_name %></p>
-
+<div id="calendar_container" style="width: 75vw;">
+<div id="calendar"></div>
+</div>
 <p><%= link_to 'Back to homepage', root_path %></p>
 <p><%= link_to 'List of animals', animals_path %></p>
