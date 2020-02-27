@@ -1,14 +1,50 @@
-<h1>Shelters</h1>
-
-<div class="cards d-flex flex-wrap">
-  <% @shelters.each do |shelter| %>
-    <div class="card col-4 m-10">
-      <h2><%= shelter.name %></h2>
-      <p>We are based at <%= shelter.address %></p>
-      <p><%= shelter.description %></p>
-      <p><%= link_to "More info", shelters_show_path(shelter) %></p>
+<div class="container">
+   <div class="col-sm-6 col-xs-12">
+    <h1><b>Find an animal near you</b></h1>
+      <form id="search-box">
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Animal type">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Location">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-outline-primary">Find your buddy!</button>
+          </div>
+        </div>
+      </form>
+      <br>
+  </div>
+  <div class="shelter-container">
+    <div class="shelter-info">
+    <% @shelters.each do |shelter| %>
+      <div class="shelter-info-details">
+        <div>
+          <h2>Shelter: <b><%= shelter.name %></b></h2>
+        </div>
+        <div class="cards">
+          <% shelter.animals.each do |animal| %>
+            <div class="card-animal">
+              <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to animal.name ,animal_path(animal) %></h2>
+                  <p><%= animal.name %> is a <%= animal.animal_type %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
     </div>
-  <% end %>
+    <div
+      id="map"
+      style="width: 100%"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
-
-<%= render "shelters_map" %>
+</div>

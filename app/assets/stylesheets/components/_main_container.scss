@@ -2,7 +2,8 @@
 }
 
 .main-container {
-  display: flex
+  display: flex;
+  flex-direction: row;
 }
 
 body {
