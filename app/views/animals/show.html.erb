@@ -48,10 +48,10 @@
       </div>
     </div>
   </div>
+  <% if volunteer_signed_in? %>
   <div class="call-to-action-frame">
     <div class="call-to-action">
       <h2>Has <%= @animal.name %> sparked your interest?</h2>
-
       <%= simple_form_for [@animal, @booking] do |f| %>
         <div class="form-item">
           <%= f.hidden_field :status, :value => "Pending" %>
@@ -61,7 +61,16 @@
        </div>
         <%= f.submit "Book now", class: "btn btn-primary" %>
       <% end %>
-
+  <% elsif shelter_signed_in? %>
+  <% else %>
+  <div class="call-to-action-frame">
+    <div class="call-to-action">
+      <h2>Has <%= @animal.name %> sparked your interest?</h2>
+        <div class="form-item">
+          <%= link_to 'Sign-up', new_volunteer_registration_path, class: "btn btn-primary" %>
+          <%= link_to 'Login', new_volunteer_session_path, class: "btn btn-primary" %>
+       </div>
+  <% end %>
     </div>
   </div>
 </div>

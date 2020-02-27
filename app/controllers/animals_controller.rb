@@ -5,7 +5,11 @@ class AnimalsController < ApplicationController
   end
 
   def index
-    @animals = Animal.where(animal_type: params[:search][:query])
+    if params[:search] == nil
+      @animals = Animal.all
+    else
+      @animals = Animal.where(animal_type: params[:search][:query])
+    end
   end
 
   def show
