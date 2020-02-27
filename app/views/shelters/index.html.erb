@@ -3,21 +3,26 @@
     <h1><b>Find an animal near you</b></h1>
       <form id="search-box">
         <div class="row">
+            <%= simple_form_for :search, url: shelters_index_path, method: "GET" do |f| %>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Animal type">
+              <%= f.text_field :query, class: 'form-control', placeholder: 'Select animal', list: 'browsers' %>
+            <!-- <input type="text" class="form-control" placeholder="Animal type"> -->
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Location">
+            <!-- <input type="text" class="form-control" placeholder="Location"> -->
           </div>
           <div>
-            <button type="submit" class="btn btn-outline-primary">Find your buddy!</button>
+              <%= f.submit "Find your buddy!", class: "btn btn-outline-primary" %>
+            <!-- <button type="submit" class="btn btn-outline-primary">Find your buddy!</button> -->
           </div>
+            <% end %>
         </div>
       </form>
       <br>
   </div>
   <div class="shelter-container">
     <div class="shelter-info">
+          <%# binding.pry %>
     <% @shelters.each do |shelter| %>
       <div class="shelter-info-details">
         <div>
@@ -25,6 +30,7 @@
         </div>
         <div class="cards">
           <% shelter.animals.each do |animal| %>
+          <% if @animals.include? animal %>
             <div class="card-animal">
               <% unless animal.photo.attached? %>
               <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
@@ -37,6 +43,7 @@
                 </div>
               </div>
             </div>
+            <% end %>
           <% end %>
         </div>
       </div>

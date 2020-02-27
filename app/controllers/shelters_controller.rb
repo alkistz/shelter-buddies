@@ -10,6 +10,11 @@ class SheltersController < ApplicationController
         image_url: helpers.asset_url('shelter-icon')
       }
       end
+      if params[:search] == nil
+        @animals = Animal.all
+      else
+        @animals = Animal.where(animal_type: params[:search][:query])
+      end
   end
 
   def show
