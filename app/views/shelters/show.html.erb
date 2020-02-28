@@ -1,28 +1,30 @@
 <div class="container">
-  <% if @shelter.id == current_shelter.id %>
-  <div class="row align-items-end">
-    <div class="col 12 col-md-5">
-      <div id="info-box">
-        <h1><b><%= @shelter.name %></b></h1>
+  <% if shelter_signed_in? %>
+    <% if @shelter.id == current_shelter.id %>
+    <div class="row align-items-end">
+      <div class="col 12 col-md-5">
+        <div id="info-box">
+          <h1><b><%= @shelter.name %></b></h1>
+        </div>
+      </div>
+      <div class="col 12 col-md-3">
+        <p><%= link_to "Register a new animal", new_animal_path, class: "btn btn-outline-primary" %></p>
+      </div>
+      <div class="col 12 col-md-3">
+        <p><%= link_to "View your bookings", shelter_my_bookings_path(@shelter), class: "btn btn-outline-primary" %></p>
       </div>
     </div>
-    <div class="col 12 col-md-3">
-      <p><%= link_to "Register a new animal", new_animal_path, class: "btn btn-outline-primary" %></p>
+    <br>
+    <h2><b>These are your animals:</b></h2>
+    <% else %>
+      <div id="info-box">
+        <h1><b><%= @shelter.name %></b></h1>
+        <p>We are based at <%= @shelter.address %>.</p>
+        <p><%= @shelter.description %></p>
     </div>
-    <div class="col 12 col-md-3">
-      <p><%= link_to "View your bookings", shelter_my_bookings_path(@shelter), class: "btn btn-outline-primary" %></p>
-    </div>
-  </div>
-  <br>
-  <h2><b>These are your animals:</b></h2>
-  <% else %>
-    <div id="info-box">
-      <h1><b><%= @shelter.name %></b></h1>
-      <p>We are based at <%= @shelter.address %>.</p>
-      <p><%= @shelter.description %></p>
-  </div>
-  <br>
-    <h2><b>Meet our animals</b></h2>
+    <br>
+      <h2><b>Meet our animals</b></h2>
+    <% end %>
   <% end %>
   <div class="cards">
     <% @shelter.animals.each do |animal| %>
