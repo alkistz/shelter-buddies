@@ -24,20 +24,24 @@ document.addEventListener('DOMContentLoaded', function() {
       right: 'agendaDay,agendaWeek,listDay'
     },
       select: function(start, end, jsEvent, view) {
-        console.log(start)
-        let start_m = moment(start.start)
+      let start_m = moment(start.start)
       if (start_m.isAfter(moment())) {
 
         var eventTitle = prompt("Provide your name:");
-        if (eventTitle) {
-          $("#calendar").fullCalendar('renderEvent', {
-            title: eventTitle,
-            start: start,
-            end: end,
-            stick: true
+        if (eventTitle)
+
+        {
+          var calendar = new Calendar(calendarEl, {
+            eventRender: function(info) {
+              title: eventTitle,
+              isStart;
+              isEnd;
+              stick: true
+            }
           });
         }
-          alert('Buddy time booked at: ' + start.format("h(:mm)a"));
+
+          alert('Buddy time booked at: ' + start_m.format("h(:mm)a"));
 
       } else {
         alert('Cannot book an appointment in the past');
@@ -53,4 +57,5 @@ document.addEventListener('DOMContentLoaded', function() {
 };
 
 export { initFullCalendar };
+
 
