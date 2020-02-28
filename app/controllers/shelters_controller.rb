@@ -8,24 +8,10 @@ class SheltersController < ApplicationController
       end
 
         if params[:search] == nil || params[:search][:location_input] == ""
-          sorted_shelters = Shelter.all
+          @shelters = Shelter.all
         else
-          sorted_shelters = Shelter.near(params[:search][:location_input], 1000, order: :distance)
+          @shelters = Shelter.near(params[:search][:location_input], 1000, order: :distance)
           animal_location_input = params[:search][:location_input]
-        end
-
-        @shelters = []
-        sorted_animals = []
-        sorted_shelters.select do |shelter|
-          shelter.animals.select do |animal|
-            if @animals.include? animal
-              sorted_animals << animal
-            end
-          end
-          shelter.animals = sorted_animals
-            unless shelter.animals.empty?
-              @shelters << shelter
-            end
         end
 
       @markers = @shelters.map do |shelter|
@@ -37,8 +23,18 @@ class SheltersController < ApplicationController
       }
       end
 
-
       if params[:search] == nil
         @user_input = "All the animals in the word"
       elsif params[:search][:location_input] == ""
-        @user_input = "All the #{animal_type_inp
+        @user_input = "All the #{animal_type_input} in the word"
+      elsif params[:search][:animal_type_input] == ""
+        @user_input = "All the animals near #{animal_location_input}"
+      else
+        @user_input = "All the #{animal_type_input} near #{animal_location_input}"
+      end
+    end
+    def show
+      @shelter = Shelter.find(params[:format])
+
+    end
+end
