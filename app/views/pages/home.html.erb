@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col">
             <%= simple_form_for :search, url: shelters_index_path, method: "GET" do |f| %>
-              <%= f.text_field :query, class: 'form-control', placeholder: 'Select animal', list: 'browsers' %>
+              <%= f.text_field :animal_type_input, class: 'form-control', placeholder: 'Select animal', list: 'browsers' %>
               <datalist id="browsers">
               <option value="Cat">
               <option value="Dog">
@@ -20,7 +20,7 @@
             </datalist>
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Select your location">
+            <%= f.text_field :location_input, class: 'form-control', placeholder: 'Select your location' %>
           </div>
         </div>
         <br>
