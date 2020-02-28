@@ -12,7 +12,7 @@
               <% else %>
                 <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
               <% end %>
-              <div class="card-trip-infos">
+              <div class="card-animal-name">
                 <div>
                   <h2><%= link_to animal.name ,animal_path(animal) %></h2>
                 </div>
