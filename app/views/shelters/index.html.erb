@@ -1,6 +1,6 @@
 <div class="container">
    <div class="col-sm-6 col-xs-12">
-    <h1><b>Find an animal near you</b></h1>
+    <h1>Find an animal near you</h1>
       <form id="search-box">
         <div class="row">
             <%= simple_form_for :search, url: shelters_index_path, method: "GET" do |f| %>
@@ -26,7 +26,7 @@
     <% @shelters.each do |shelter| %>
       <div class="shelter-info-details">
         <div>
-          <h2>Shelter = <b><%= shelter.name %></b></h2>
+          <h2><%= link_to shelter.name ,shelters_show_path(shelter) %></h2>
         </div>
         <div class="cards">
           <% shelter.animals.each do |animal| %>
@@ -51,7 +51,6 @@
     </div>
     <div
       id="map"
-      style="width: 100%;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
