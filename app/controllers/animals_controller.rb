@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :animal_find, only: [:show, :delete, :update, :edit]
+  before_action :animal_find, only: [:show, :destroy, :update, :edit]
 
   def search
   end
@@ -22,7 +22,6 @@ class AnimalsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
   end
 
   def new
