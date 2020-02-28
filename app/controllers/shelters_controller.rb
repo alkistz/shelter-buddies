@@ -7,7 +7,7 @@ class SheltersController < ApplicationController
         lat: shelter.latitude,
         lng: shelter.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { shelter: shelter }),
-        image_url: helpers.asset_url('shelter-icon')
+        image_url: helpers.asset_url('shelter-icon.png')
       }
       end
       if params[:search] == nil
