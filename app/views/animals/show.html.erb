@@ -40,6 +40,20 @@
               </tr>
           </table>
       </div>
+      <% if shelter_signed_in? %>
+        <% if @animal.shelter.id == current_shelter.id %>
+          <div class="col 12 col-md-5">
+            <p><%= link_to "Edit info", edit_animal_path, class: "btn btn-outline-primary" %></p>
+          </div>
+          <div class="col 12 col-md-5">
+            <p>
+              <%= link_to "Deregister", animal_path(@animal),
+                                  method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
     <div class="col 12 col-md-7">
       <div>
@@ -68,8 +82,8 @@
     <div class="call-to-action">
       <h2>Has <%= @animal.name %> sparked your interest?</h2>
         <div class="form-item">
-          <%= link_to 'Sign-up', new_volunteer_registration_path, class: "btn btn-primary" %>
-          <%= link_to 'Login', new_volunteer_session_path, class: "btn btn-primary" %>
+          <%= link_to 'Sign-up', new_volunteer_registration_path, class: "btn btn-outline-light" %>
+          <%= link_to 'Login', new_volunteer_session_path, class: "btn btn-outline-light" %>
        </div>
   <% end %>
     </div>
