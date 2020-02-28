@@ -53,6 +53,12 @@
   <div class="call-to-action-frame">
     <div class="call-to-action">
       <h2>Has <%= @animal.name %> sparked your interest?</h2>
+
+        <div id="calendar_container" style="width: 75vw;">
+          <div id="calendar"></div>
+        </div>
+
+<!--
       <%= simple_form_for [@animal, @booking] do |f| %>
         <div class="form-item">
           <%= f.hidden_field :status, :value => "Pending" %>
@@ -62,6 +68,7 @@
        </div>
         <%= f.submit "Book now", class: "btn btn-primary" %>
       <% end %>
+-->
   <% elsif shelter_signed_in? %>
   <% else %>
   <div class="call-to-action-frame">
