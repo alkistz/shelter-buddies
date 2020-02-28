@@ -1,5 +1,11 @@
 class SheltersController < ApplicationController
   def index
+      if params[:search] == nil || params[:search][:animal_type_input] == ""
+        @animals = Animal.all
+      else
+        @animals = Animal.where(animal_type: params[:search][:animal_type_input])
+        animal_type_input = params[:search][:animal_type_input]
+      end
 
         if params[:search] == nil || params[:search][:location_input] == ""
           sorted_shelters = Shelter.all
@@ -9,10 +15,17 @@ class SheltersController < ApplicationController
         end
 
         @shelters = []
+        sorted_animals = []
         sorted_shelters.select do |shelter|
-          unless shelter.animals.empty?
-            @shelters << shelter
+          shelter.animals.select do |animal|
+            if @animals.include? animal
+              sorted_animals << animal
+            end
           end
+          shelter.animals = sorted_animals
+            unless shelter.animals.empty?
+              @shelters << shelter
+            end
         end
 
       @markers = @shelters.map do |shelter|
@@ -24,12 +37,6 @@ class SheltersController < ApplicationController
       }
       end
 
-      if params[:search] == nil || params[:search][:animal_type_input] == ""
-        @animals = Animal.all
-      else
-        @animals = Animal.where(animal_type: params[:search][:animal_type_input])
-        animal_type_input = params[:search][:animal_type_input]
-      end
 
       if params[:search] == nil
         @user_input = "All the animals in the word"
