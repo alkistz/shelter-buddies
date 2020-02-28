@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col">
             <%= simple_form_for :search, url: shelters_index_path, method: "GET" do |f| %>
-              <%= f.text_field :query, class: 'form-control', placeholder: 'Select animal', list: 'browsers' %>
+              <%= f.text_field :animal_type_input, class: 'form-control', placeholder: 'Select animal', list: 'browsers' %>
               <datalist id="browsers">
               <option value="Cat">
               <option value="Dog">
@@ -20,7 +20,7 @@
             </datalist>
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Select your location">
+            <%= f.text_field :location_input, class: 'form-control', placeholder: 'Select your location' %>
           </div>
         </div>
         <br>
@@ -29,7 +29,7 @@
             <div class="form-group">
               <input id='datetimepicker1'type="text" class="form-control" placeholder="Select your date"/>
             </div>
-              <%= f.submit "Search", class: "btn btn-primary" %>
+              <%= f.submit "Search", class: "btn btn-outline-light" %>
             <% end %>
           </div>
         </div>
@@ -66,20 +66,20 @@
       <br>
         <div class="row">
           <div class="col-12 col-lg-6">
-            <div class="card-product">
-              <img src="https://source.unsplash.com/b1Hg7QI-zcc/1600x900" />
-              <div class="card-product-infos">
+            <div class="card-testimony">
+              <img src="https://source.unsplash.com/b1Hg7QI-zcc/400x400" />
+              <div class="card-testimony-infos">
                 <h3>Don't know who enjoyed it more - me or Polly!</h3>
                 <p>I had a great afternoon with <strong>Polly</strong>. She's such a friendly dog and
-                clearly loved our walk in the forest. I'll definitely arrange another memetup with her.</p>
+                clearly loved our walk in the forest. I'll definitely arrange another meet-up with her.</p>
                 <p><i>Laura H.</i></p>
               </div>
             </div>
           </div>
           <div class="col-12 col-lg-6">
-            <div class="card-product">
-              <img src="https://source.unsplash.com/DItYlc26zVI/1600x900" />
-              <div class="card-product-infos">
+            <div class="card-testimony">
+              <img src="https://source.unsplash.com/DItYlc26zVI/400x400" />
+              <div class="card-testimony-infos">
                 <h3>A wonderful way to spend an afternoon</h3>
                 <p>I'm very glad I found Shelter Buddies. I'm a huge cat lover but unfortunately can't
                 have one at home. Now I can go visit my favourite shelter and play with cats whenever I want.</p>

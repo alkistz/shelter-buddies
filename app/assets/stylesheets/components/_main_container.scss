@@ -1,4 +1,5 @@
 .container {
+  min-height: 768px;
 }
 
 .main-container {
@@ -8,6 +9,14 @@
 
 body {
   background-color: white;
+}
+
+body h1 {
+  font-weight: bold;
+}
+
+body h2 {
+  font-weight: bold;
 }
 
 #description {
