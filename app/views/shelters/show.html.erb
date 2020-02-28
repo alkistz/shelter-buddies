@@ -1,17 +1,20 @@
 <div class="container">
   <% if shelter_signed_in? %>
     <% if @shelter.id == current_shelter.id %>
-    <div class="row align-items-end">
-      <div class="col 12 col-md-5">
+    <div class="row align-items-center">
+      <div class="col 12 col-md-6">
         <div id="info-box">
           <h1><b><%= @shelter.name %></b></h1>
         </div>
       </div>
-      <div class="col 12 col-md-3">
+      <div class="col 12 col-md-2">
         <p><%= link_to "Register a new animal", new_animal_path, class: "btn btn-outline-primary" %></p>
       </div>
-      <div class="col 12 col-md-3">
+      <div class="col 12 col-md-2">
         <p><%= link_to "View your bookings", shelter_my_bookings_path(@shelter), class: "btn btn-outline-primary" %></p>
+      </div>
+      <div class="col 12 col-md-2">
+        <p><%= link_to "Edit info", edit_shelter_registration_path, class: "btn btn-outline-primary" %></p>
       </div>
     </div>
     <br>
