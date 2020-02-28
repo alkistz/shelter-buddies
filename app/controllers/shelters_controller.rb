@@ -41,16 +41,4 @@ class SheltersController < ApplicationController
       if params[:search] == nil
         @user_input = "All the animals in the word"
       elsif params[:search][:location_input] == ""
-        @user_input = "All the #{animal_type_input}s in the word"
-      elsif params[:search][:animal_type_input] == ""
-        @user_input = "All the animals near #{animal_location_input}"
-      else
-        @user_input = "All the #{animal_type_input}s near #{animal_location_input}"
-      end
-
-  end
-
-  def show
-    @shelter = Shelter.find(params[:format])
-  end
-end
+        @user_input = "All the #{animal_type_inp
