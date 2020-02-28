@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.animal = @animal
     @booking.volunteer = current_volunteer
     @booking.save!
-    redirect_to @booking
+    redirect_to @animal
   end
 
   def edit
