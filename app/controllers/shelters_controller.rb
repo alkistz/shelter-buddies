@@ -10,7 +10,7 @@ class SheltersController < ApplicationController
         if params[:search] == nil || params[:search][:location_input] == ""
           @shelters = Shelter.all
         else
-          @shelters = Shelter.near(params[:search][:location_input], 1000, order: :distance)
+          @shelters = Shelter.near(params[:search][:location_input], 50, order: :distance)
           animal_location_input = params[:search][:location_input]
         end
 
