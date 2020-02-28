@@ -5,7 +5,6 @@
 <% volunteer = Volunteer.find(@booking.volunteer_id) %>
 
 <p>Date: <%= @booking.time_slot %></p>
-<p>Booking status: <%= @booking.status %></p>
 <p>Pet: <%= link_to animal.name , animal_path(animal) %></p>
 <p>Volunteer: <%= volunteer.first_name %>, <%= volunteer.last_name %></p>
 

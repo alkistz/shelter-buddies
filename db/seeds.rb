@@ -10,6 +10,7 @@ Booking.destroy_all
 Animal.destroy_all
 Shelter.destroy_all
 Volunteer.destroy_all
+Animal.destroy_all
 
 shelters = Shelter.create([
   {
@@ -50,4 +51,20 @@ volunteers = Volunteer.create([
   }
 ])
 
+p animals = Animal.create!([
+  {
+    name: 'Doggie',
+    animal_type: 'dog',
+    race: 'labrador',
+    age: 3,
+    shelter_id: 10
+  },
+  {
+    name: 'Kitty',
+    animal_type: 'cat',
+    race: 'siamese',
+    age: 1,
+    shelter_id: 11
+  }
+])
 

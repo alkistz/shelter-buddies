@@ -64,18 +64,18 @@
     </div>
   </div>
   <% if volunteer_signed_in? %>
-    <div class="call-to-action-frame">
-      <div class="call-to-action">
-        <h2>Has <%= @animal.name %> sparked your interest?</h2>
-        <%= simple_form_for [@animal, @booking] do |f| %>
-          <div class="form-item">
-            <%= f.hidden_field :status, :value => "Pending" %>
-            <%= f.hidden_field :volunteer_id, :value => current_volunteer.id %>
-            <%= f.label :time_slot %>
-            <%= f.date_field :time_slot, class: 'form-control' %>
-         </div>
-          <%= f.submit "Book now", class: "btn btn-primary" %>
-  <% end %>
+  <div class="call-to-action-frame">
+    <div class="call-to-action">
+      <h2>Has <%= @animal.name %> sparked your interest?</h2>
+
+        <div id="calendar_container">
+          <div id="calendar" data-bookings="<%= @animal.bookings.to_json %>"></div>
+        </div>
+
+      <%= simple_form_for [@animal, @booking] do |f| %>
+          <%= f.hidden_field :status, :value => "Pending" %>
+          <%= f.hidden_field :time_slot, class: 'form-control' %>
+      <% end %>
   <% elsif shelter_signed_in? %>
   <% else %>
   <div class="call-to-action-frame">
