@@ -1,14 +1,45 @@
-<h1><%= @shelter.name %></h1>
-<p>We are based at <%= @shelter.address %></p>
-<p><%= @shelter.description %></p>
-<p>Meet our animals:</p>
-<div class="cards d-flex flex-wrap">
-  <% @shelter.animals.each do |animal| %>
-    <div class="card col-4 m-10">
-      <h2><%= animal.name %></h2>
-      <p><%= animal.race %></p>
-      <p><%= link_to "More info", animal_path(animal) %></p>
+<div class="container">
+  <% if @shelter.id == current_shelter.id %>
+  <div class="row align-items-end">
+    <div class="col 12 col-md-5">
+      <div id="info-box">
+        <h1><b><%= @shelter.name %></b></h1>
+      </div>
     </div>
+    <div class="col 12 col-md-3">
+      <p><%= link_to "Register a new animal", new_animal_path, class: "btn btn-outline-primary" %></p>
+    </div>
+    <div class="col 12 col-md-3">
+      <p><%= link_to "View your bookings", shelter_my_bookings_path(@shelter), class: "btn btn-outline-primary" %></p>
+    </div>
+  </div>
+  <br>
+  <h2><b>These are your animals:</b></h2>
+  <% else %>
+    <div id="info-box">
+      <h1><b><%= @shelter.name %></b></h1>
+      <p>We are based at <%= @shelter.address %>.</p>
+      <p><%= @shelter.description %></p>
+  </div>
+  <br>
+    <h2><b>Meet our animals</b></h2>
   <% end %>
+  <div class="cards">
+    <% @shelter.animals.each do |animal| %>
+      <% if @shelter.animals.include? animal %>
+        <div class="card-animal">
+          <% unless animal.photo.attached? %>
+            <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
+          <% else %>
+          <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to animal.name ,animal_path(animal) %></h2>
+            </div>
+          </div>
+       </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
-<p><%= link_to "Register a new animal", new_animal_path %></p>
