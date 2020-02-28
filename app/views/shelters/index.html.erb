@@ -22,12 +22,14 @@
     <div class="shelter-info">
       <h3><%= @user_input %></h3>
     <% @shelters.each do |shelter| %>
+    <% unless shelter.animals.empty? %>
         <div class="shelter-info-details">
           <div>
             <h2><%= link_to shelter.name ,shelters_show_path(shelter) %></h2>
           </div>
           <div class="cards">
             <% shelter.animals.each do |animal| %>
+            <% if @animals.include? animal %>
               <div class="card-animal">
                 <% unless animal.photo.attached? %>
                 <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
@@ -41,8 +43,10 @@
                 </div>
               </div>
             <% end %>
+            <% end %>
           </div>
         </div>
+        <% end %>
       <% end %>
     </div>
     <div
