@@ -1,8 +1,32 @@
-<h1>My Bookings</h1>
-
-
-<% @bookings.each do |booking| %>
-  <% animal = Animal.find(booking.animal_id) %>
-  <h2>Booking with: <%= animal.name %></h2>
-  <p>Booked on: <%= booking.time_slot %></p>
-<% end %>
+<div class="container">
+  <h1>My Bookings</h1>
+    <% @bookings.each do |booking| %>
+    <div class="card-reservation">
+      <div class="main-container">
+        <div class="cards">
+          <% animal = Animal.find(booking.animal_id) %>
+            <div class="card-animal">
+              <% unless animal.photo.attached? %>
+                <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
+              <% else %>
+                <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to animal.name ,animal_path(animal) %></h2>
+                </div>
+              </div>
+            </div>
+        </div>
+      <div class="booking-infos">
+        <div>
+          <h2>Booking with: <%= animal.name %></h2>
+        </div>
+        <div>
+          <h4>Date: <%= booking.time_slot %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
