@@ -3,10 +3,10 @@
     <% @bookings.each do |booking| %>
     <div class="card-reservation">
       <div class="main-container">
-        <div class="cards">
+        <div class="cards-b">
           <% animal = Animal.find(booking.animal_id) %>
             <%= link_to animal_path(animal) do %>
-            <div class="card-animal">
+            <div class="card-animal-b">
               <% unless animal.photo.attached? %>
                 <img src="https://source.unsplash.com/2l0CWTpcChI/1600x900" />
               <% else %>

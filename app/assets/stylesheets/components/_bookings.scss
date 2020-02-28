@@ -11,24 +11,33 @@
 }
 
 
-
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.cards-b {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 16px;
+  display: flex;
+  width: 600px;
 }
 
 @media(max-width: 992px) {
-  .cards {
+  .cards-b {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media(max-width: 768px) {
-  .cards {
+  .cards-b {
     grid-template-columns: 1fr;
   }
+}
+
+.card-animal-b {
+  overflow: hidden;
+  max-width: 450px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .card-product {
